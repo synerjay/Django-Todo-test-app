@@ -3,39 +3,6 @@ import Popup from './components/Popup';
 import axios from 'axios';
 
 function App() {
-  const todoItems = [
-    {
-      id: 2,
-      title: 'Buy avocados from Calbee',
-      description: 'I need to buy some more avocados',
-      completed: true,
-    },
-    {
-      id: 3,
-      title: 'Need to learn Django REST Framework',
-      description: 'Yes, please more knowledge!',
-      completed: false,
-    },
-    {
-      id: 4,
-      title: 'Study some more Data Analysis and SQL',
-      description: 'I need to study more PostgreSQL',
-      completed: false,
-    },
-    {
-      id: 5,
-      title: 'Study MySQL',
-      description: 'Learn the basics of SQL coding of database',
-      completed: true,
-    },
-    {
-      id: 6,
-      title: 'Django REST Framework is so awesome!!!!',
-      description: "WHAT THE HELL!! I'm freaking out!!! Django is awesome!!",
-      completed: true,
-    },
-  ];
-
   // States
   const [viewCompleted, setViewCompleted] = useState(false);
   const [todoList, setTodoList] = useState([]);
