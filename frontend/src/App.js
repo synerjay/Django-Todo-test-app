@@ -22,14 +22,16 @@ function App() {
   const handleSubmit = (item) => {
     toggle();
     if (item.id) {
+      // UPDATE request
       axios.put(`/api/todos/${item.id}/`, item).then((res) => refreshList()); // with a payload
       return;
     }
-    axios.post('/api/todos/', item).then((res) => refreshList());
+    axios.post('/api/todos/', item).then((res) => refreshList()); // if handleSubmit does not have an id, then will make post request
   };
 
   const handleDelete = (item) => {
-    axios.delete(`/api/todos/${item.id}/`).then((res) => refreshList());
+    // DELETE request
+    axios.delete(`/api/todos/${item.id}/`).then((res) => refreshList()); // from router class in rest_framework
   };
 
   const createItem = () => {
@@ -100,7 +102,7 @@ function App() {
 
   const refreshList = () => {
     axios
-      .get('/api/todos/')
+      .get('/api/todos/') // READ request
       .then((res) => setTodoList(res.data))
       .catch((err) => console.log(err));
   };
