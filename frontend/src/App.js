@@ -26,6 +26,7 @@ function App() {
       axios.put(`/api/todos/${item.id}/`, item).then((res) => refreshList()); // with a payload
       return;
     }
+    //CREATE request
     axios.post('/api/todos/', item).then((res) => refreshList()); // if handleSubmit does not have an id, then will make post request
   };
 
