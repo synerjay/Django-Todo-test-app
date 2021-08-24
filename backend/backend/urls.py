@@ -30,4 +30,4 @@ urlpatterns = [
     # /todos/ - returns a list of all the Todo items. CREATE and READ operations can be performed here.
     # /todos/id - returns a single Todo item using the id primary key. UPDATE and DELETE operations can be performed here.
 
-# admin jerometo apartment name and year of moved in
+# admin jerometo living city CAPITAL first name and year of moved in

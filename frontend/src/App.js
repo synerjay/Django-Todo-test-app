@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import Popup from './components/Popup';
 import axios from 'axios';
 
+axios.defaults.xsrfCookieName = 'csrftoken';
+axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+
 function App() {
   // States
   const [viewCompleted, setViewCompleted] = useState(false);
@@ -27,7 +30,13 @@ function App() {
       return;
     }
     //CREATE request
-    axios.post('/api/todos/', item).then((res) => refreshList()); // if handleSubmit does not have an id, then will make post request
+    axios
+      .post('/api/todos/', item, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      .then((res) => refreshList()); // if handleSubmit does not have an id, then will make post request
   };
 
   const handleDelete = (item) => {
