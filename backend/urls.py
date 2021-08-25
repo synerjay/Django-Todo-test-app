@@ -25,7 +25,7 @@ router.register(r'todos', views.TodoView, 'todo')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    re_path('.*', TemplateView.as_view(template_name='index.html', content_type="application/javascript"))
+    re_path('.*', TemplateView.as_view(template_name='index.html'))
 ]
 
 # The router class allows to you make the following queries:
