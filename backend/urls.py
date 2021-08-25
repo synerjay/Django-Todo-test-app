@@ -25,7 +25,11 @@ router.register(r'todos', views.TodoView, 'todo')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    re_path('.*', TemplateView.as_view(template_name='index.html'))
+    re_path(r'^robots\.txt$', TemplateView.as_view(
+        template_name="robots.txt", content_type='text/plain')),
+    re_path(r'^manifest\.json$', TemplateView.as_view(
+        template_name="manifest.json", content_type='application/json')),
+    re_path('.*', TemplateView.as_view(template_name='index.html', content_type='text/html'))
 ]
 
 # The router class allows to you make the following queries:
