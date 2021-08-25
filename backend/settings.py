@@ -35,9 +35,9 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['django-todo-test.herokuapp.com']
 
 
 # DJANGO REST Framework installation: After typing in pipenv install djangorestframework django-cors-headers
